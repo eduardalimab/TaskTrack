@@ -1,0 +1,14 @@
+POST localhost:8080/api/projects
+Content-Type: application/json
+
+{
+    "name": "Project 2",
+    "description": "This is project 2",
+    "start_date": "2021-01-01",
+    "end_date": "2021-12-31",
+    "status": "ACTIVE"
+}
+###
+
+
+GET localhost:8080/api/projects

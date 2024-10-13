@@ -1,30 +1,21 @@
 package br.pucpr.authserver.projects
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
+import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank
 
 
 @Entity
+@Table(name = "projects")
 class Project (
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     var id: Long? = null,
-
-    @Column(nullable = false, unique = true)
+    @field:NotBlank
     var name: String,
-
-    @NotBlank
+    @field:NotBlank
     var description: String,
-
-    @NotBlank
     var start_date: String,
-
-    @NotBlank
     var end_date: String,
-
-    @NotBlank
     var status: String,
 
 )
