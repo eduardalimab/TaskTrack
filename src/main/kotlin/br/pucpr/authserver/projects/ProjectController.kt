@@ -27,7 +27,7 @@ class ProjectController(
 
     @PostMapping
     fun createProject(@RequestBody @Validated req: ProjectRequest) =
-        service.save(Project(name = req.name, description = req.description, start_date = req.start_date, end_date = req.end_date, status = req.status))
+        service.save(req)
             .toResponse()
             .let { ResponseEntity.status(CREATED).body(it) }
 
