@@ -10,10 +10,10 @@ data class ProjectRequest(
     @field:NotBlank
     val description : String,
 
-    @field:NotBlank @field:DateTimeFormat
+    @field:NotBlank
     val start_date : String,
 
-    @field:NotBlank @field:DateTimeFormat
+    @field:NotBlank
     val end_date : String,
 
     @field:NotBlank

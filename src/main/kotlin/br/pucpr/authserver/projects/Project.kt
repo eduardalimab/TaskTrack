@@ -1,5 +1,6 @@
 package br.pucpr.authserver.projects
 
+import br.pucpr.authserver.task.Task
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank
 
@@ -17,12 +18,8 @@ class Project (
     var end_date: String,
     var status: String,
 
-    @ManyToMany
-    @JoinTable(
-        name = "project_tasks",
-        joinColumns = [JoinColumn(name = "project_id")],
-        inverseJoinColumns = [JoinColumn(name = "task_id")]
-    )
-    val tasks: MutableSet<Task> = mutableSetOf()
+    @OneToMany(mappedBy = "project")
+    var tasks: MutableList<Task> = mutableListOf()
+
 
 )

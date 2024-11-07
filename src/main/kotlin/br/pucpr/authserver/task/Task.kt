@@ -1,10 +1,11 @@
-package br.pucpr.authserver.projects
+package br.pucpr.authserver.task
 
+import br.pucpr.authserver.projects.Project
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
+import jakarta.persistence.ManyToOne
 
 @Entity
 open class Task (
@@ -14,8 +15,9 @@ open class Task (
     @Column(unique = true, nullable = false)
     val name: String = "",
 
-    @ManyToMany(mappedBy = "tasks")
-    val projects: MutableSet<Project> = mutableSetOf()
+    @ManyToOne
+    val project: Project? = null
+
 
 ) {
 }

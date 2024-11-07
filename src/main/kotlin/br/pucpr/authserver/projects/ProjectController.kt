@@ -39,7 +39,6 @@ class ProjectController(
         } ?: ResponseEntity.notFound().build()
 
 
-
     private fun Project.toResponse() = ProjectResponse(id!!, name, description, start_date, end_date, status)
 }
 
