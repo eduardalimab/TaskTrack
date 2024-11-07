@@ -1612,3 +1612,34 @@ java.lang.NullPointerException: null
 2024-11-06T23:51:46.081-03:00  INFO 13908 --- [authserver] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-11-06T23:51:46.092-03:00  INFO 13908 --- [authserver] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-11-06T23:51:46.148-03:00  INFO 13908 --- [authserver] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-06T23:52:14.191-03:00  INFO 15008 --- [authserver] [main] b.p.authserver.AuthserverApplicationKt   : Starting AuthserverApplicationKt using Java 21.0.4 with PID 15008 (C:\Users\muril\Documents\GitHub\TaskTrack\build\classes\kotlin\main started by muril in C:\Users\muril\Documents\GitHub\TaskTrack)
+2024-11-06T23:52:14.194-03:00  INFO 15008 --- [authserver] [main] b.p.authserver.AuthserverApplicationKt   : No active profile set, falling back to 1 default profile: "default"
+2024-11-06T23:52:17.560-03:00  INFO 15008 --- [authserver] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-06T23:52:17.736-03:00  INFO 15008 --- [authserver] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 4 JPA repository interfaces.
+2024-11-06T23:52:18.509-03:00  INFO 15008 --- [authserver] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-06T23:52:18.522-03:00  INFO 15008 --- [authserver] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-06T23:52:18.523-03:00  INFO 15008 --- [authserver] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-11-06T23:52:18.595-03:00  INFO 15008 --- [authserver] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-11-06T23:52:18.595-03:00  INFO 15008 --- [authserver] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4331 ms
+2024-11-06T23:52:18.622-03:00  INFO 15008 --- [authserver] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-06T23:52:18.820-03:00  INFO 15008 --- [authserver] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+2024-11-06T23:52:18.822-03:00  INFO 15008 --- [authserver] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-06T23:52:18.832-03:00  INFO 15008 --- [authserver] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:db'
+2024-11-06T23:52:18.946-03:00  INFO 15008 --- [authserver] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-06T23:52:19.012-03:00  INFO 15008 --- [authserver] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-11-06T23:52:19.054-03:00  INFO 15008 --- [authserver] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-06T23:52:19.389-03:00  INFO 15008 --- [authserver] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-06T23:52:20.575-03:00  INFO 15008 --- [authserver] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-06T23:52:20.633-03:00  INFO 15008 --- [authserver] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-06T23:52:21.204-03:00  INFO 15008 --- [authserver] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-06T23:52:21.829-03:00  WARN 15008 --- [authserver] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-06T23:52:22.272-03:00  INFO 15008 --- [authserver] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-11-06T23:52:22.484-03:00  INFO 15008 --- [authserver] [main] br.pucpr.authserver.Bootstrapper         : ADMIN and USER roles created!
+2024-11-06T23:52:22.515-03:00  INFO 15008 --- [authserver] [main] br.pucpr.authserver.Bootstrapper         : ADMIN user created!
+2024-11-06T23:52:22.532-03:00  INFO 15008 --- [authserver] [main] b.p.a.projects.BootstrapperProject       : Bootstrapping projects
+2024-11-06T23:52:22.543-03:00  INFO 15008 --- [authserver] [main] b.p.a.projects.BootstrapperProject       : Bootstrapped project with id 1
+2024-11-06T23:52:22.544-03:00  INFO 15008 --- [authserver] [main] b.p.a.projects.BootstrapperProject       : Bootstrapped task with id 1
+2024-11-06T23:52:22.545-03:00  INFO 15008 --- [authserver] [main] b.p.authserver.AuthserverApplicationKt   : Started AuthserverApplicationKt in 9.177 seconds (process running for 10.714)
+2024-11-06T23:52:40.567-03:00  INFO 15008 --- [authserver] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-06T23:52:40.567-03:00  INFO 15008 --- [authserver] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-06T23:52:40.570-03:00  INFO 15008 --- [authserver] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
