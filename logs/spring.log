@@ -91,3 +91,6 @@
 2024-11-06T12:28:04.092-03:00  INFO 9708 --- [authserver] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-11-06T12:28:04.096-03:00  INFO 9708 --- [authserver] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2024-11-06T12:28:05.733-03:00  INFO 9708 --- [authserver] [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1237 ms
+2024-11-06T19:50:26.160-03:00  WARN 9708 --- [authserver] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m34s903ms15µs300ns).
+2024-11-06T20:50:34.891-03:00  WARN 9708 --- [authserver] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m38s132ms255µs300ns).
+2024-11-06T21:02:47.970-03:00  WARN 9708 --- [authserver] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m12s869ms163µs600ns).

@@ -12,9 +12,10 @@ open class Task (
     val id: Long? = null,
 
     @Column(unique = true, nullable = false)
-    val name: String,
+    val name: String = "",
 
     @ManyToMany(mappedBy = "tasks")
     val projects: MutableSet<Project> = mutableSetOf()
 
-)
+) {
+}

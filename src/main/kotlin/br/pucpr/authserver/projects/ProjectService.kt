@@ -4,9 +4,9 @@ import br.pucpr.authserver.projects.requests.ProjectRequest
 import org.springframework.stereotype.Service
 
 @Service
-class ProjectService (val repository: ProjectRepository, val taskRepository: TaskRepository): ProjectRepository {
+class ProjectService (val repository: ProjectRepository, val taskRepository: TaskRepository) {
 
-    fun save(req: ProjectRequest) {
+    fun save(req: ProjectRequest): Project {
         val project = Project(
             name = req.name,
             description = req.description,
