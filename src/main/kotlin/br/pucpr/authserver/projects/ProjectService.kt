@@ -3,6 +3,7 @@ package br.pucpr.authserver.projects
 import br.pucpr.authserver.projects.requests.ProjectRequest
 import br.pucpr.authserver.task.TaskRepository
 import jakarta.transaction.Transactional
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 
 @Service
@@ -21,6 +22,7 @@ class ProjectService (val repository: ProjectRepository, val taskRepository: Tas
 
 //        val projectTask = taskRepository.findByName("Back")
 //        project.tasks.add(projectTask!!)
+        log.info("Project saved. name={} description={}", project.name, project.description)
         return repository.save(project)
         }
 
@@ -29,5 +31,8 @@ class ProjectService (val repository: ProjectRepository, val taskRepository: Tas
 
     fun findAll() = repository.findAll()
 
+    companion object {
+        val log = LoggerFactory.getLogger(ProjectService::class.java)
+    }
 
 }
