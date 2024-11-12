@@ -20,9 +20,6 @@ class ProjectService (val repository: ProjectRepository, val taskRepository: Tas
             status = req.status)
         repository.save(project
         )
-
-//        val projectTask = taskRepository.findByName("Back")
-//        project.tasks.add(projectTask!!)
         log.info("Project saved. name={} description={}", project.name, project.description)
         return repository.save(project)
         }
@@ -37,8 +34,10 @@ class ProjectService (val repository: ProjectRepository, val taskRepository: Tas
         return project?.tasks ?: emptyList()
     }
 
+    fun findByStartDate(startDate: String?): List<Project> {
+        return repository.findByStartDate(startDate)
+    }
     companion object {
         val log = LoggerFactory.getLogger(ProjectService::class.java)
     }
-
 }

@@ -2,7 +2,7 @@ POST localhost:8080/api/projects
 Content-Type: application/json
 
 {
-  "name": "Projeto 02 Teste",
+  "name": "Projeto 03",
   "description": "Projeto 02 Teste",
   "status": "IN_PROGRESS",
   "end_date": "2021-12-31",
