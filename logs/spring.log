@@ -26,3 +26,9 @@
 2024-11-12T09:12:43.549-03:00  INFO 500 --- [authserver] [main] b.p.a.projects.BootstrapperProject       : Bootstrapped project with id 1
 2024-11-12T09:12:43.549-03:00  INFO 500 --- [authserver] [main] b.p.a.projects.BootstrapperProject       : Bootstrapped task with id 1
 2024-11-12T09:12:43.551-03:00  INFO 500 --- [authserver] [main] b.p.authserver.AuthserverApplicationKt   : Started AuthserverApplicationKt in 10.728 seconds (process running for 11.729)
+2024-11-12T09:15:41.738-03:00  INFO 500 --- [authserver] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-12T09:15:41.739-03:00  INFO 500 --- [authserver] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-12T09:15:41.741-03:00  INFO 500 --- [authserver] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-11-12T09:15:42.952-03:00  INFO 500 --- [authserver] [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 711 ms
+2024-11-12T09:16:14.753-03:00  INFO 500 --- [authserver] [http-nio-8080-exec-9] b.p.authserver.projects.ProjectService   : Project saved. name=Projeto 02 Teste description=Projeto 02 Teste
+2024-11-12T09:16:20.156-03:00  INFO 500 --- [authserver] [http-nio-8080-exec-10] b.p.authserver.projects.ProjectService   : Project saved. name=Projeto 03 description=Projeto 02 Teste
