@@ -2,13 +2,37 @@ POST localhost:8080/api/projects
 Content-Type: application/json
 
 {
-  "name": "Project 1",
-  "description": "Project 1 description",
-  "start_date": "01-01-2021",
-  "end_date": "12-31-2020",
-  "status": "ACTIVE"
+  "name": "Projeto 02 Teste",
+  "description": "Projeto 02 Teste",
+  "status": "IN_PROGRESS",
+  "end_date": "2021-12-31",
+  "start_date": "2021-01-01"
 }
 ###
 
+POST localhost:8080/api/tasks
+Content-Type: application/json
 
-GET localhost:8080/api/projects
+{
+  "name": "Tarefa 02 Teste",
+  "projectId": 2
+}
+
+###
+
+POST localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"name": "Tarefa 1 Teste",
+  "projectId": 2
+}
+
+
+###
+
+
+GET localhost:8080/api/projects/2/tasks
+
+##
+

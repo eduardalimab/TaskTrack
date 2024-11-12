@@ -1,5 +1,6 @@
 package br.pucpr.authserver.task
 
+import br.pucpr.authserver.projects.ProjectRepository
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus.CREATED
 import org.springframework.http.ResponseEntity
@@ -8,14 +9,18 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/tasks")
 class TaskController(
-    val service: TaskService
+    val service: TaskService,
+    val projectRepository: ProjectRepository
 ) {
     @PostMapping
     fun insert(
-        @RequestBody @Valid task : CreateTaskRequest
-    ) = service.insert(task.toTask())
-        .let { TaskResponse(it) }
-        .let { ResponseEntity.status(CREATED).body(it) }
+        @RequestBody @Valid taskRequest: CreateTaskRequest
+    ): ResponseEntity<TaskResponse> {
+        val project = projectRepository.findById(taskRequest.projectId!!)
+            .orElseThrow { IllegalArgumentException("Project not found") }
+        val task = service.insert(taskRequest.toTask(project))
+        return ResponseEntity.status(CREATED).body(TaskResponse(task))
+    }
 
     @GetMapping
     fun list() =

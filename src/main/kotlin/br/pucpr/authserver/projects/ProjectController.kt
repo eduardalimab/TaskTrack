@@ -2,7 +2,9 @@ package br.pucpr.authserver.projects
 
 import br.pucpr.authserver.projects.requests.ProjectRequest
 import br.pucpr.authserver.projects.responses.ProjectResponse
+import br.pucpr.authserver.task.TaskResponse
 import jakarta.transaction.Transactional
+import org.apache.coyote.Response
 import org.springframework.http.HttpStatus.CREATED
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
@@ -37,6 +39,12 @@ class ProjectController(
         service.getById(id).orElse(null)
             ?.let { ResponseEntity.ok(it.toResponse())
         } ?: ResponseEntity.notFound().build()
+
+    @GetMapping("/{id}/tasks")
+    fun getTasksByProjectId(@PathVariable("id") id: Long): ResponseEntity<List<TaskResponse>> {
+        val tasks = service.getTasksByProjectId(id).map { TaskResponse(it) }
+        return ResponseEntity.ok(tasks)
+    }
 
 
     private fun Project.toResponse() = ProjectResponse(id!!, name, description, start_date, end_date, status)

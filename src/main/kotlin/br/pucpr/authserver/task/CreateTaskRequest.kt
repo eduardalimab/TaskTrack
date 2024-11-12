@@ -1,13 +1,17 @@
 package br.pucpr.authserver.task
 
-import jakarta.validation.constraints.NotBlank
+import br.pucpr.authserver.projects.Project
+import jakarta.validation.constraints.NotNull
 
 
 data class CreateTaskRequest(
-    @field:NotBlank
-    val name: String?
+    val name: String?,
+
+    @field:NotNull
+    val projectId: Long?
 ) {
-    fun toTask() = Task(
-        name=name!!,
+    fun toTask(project: Project) = Task(
+        name = name ?: "",
+        project = project
     )
 }

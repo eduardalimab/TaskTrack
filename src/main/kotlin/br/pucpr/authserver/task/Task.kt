@@ -5,6 +5,7 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 
 @Entity
@@ -15,8 +16,9 @@ open class Task (
     @Column(unique = true, nullable = false)
     val name: String = "",
 
-    @ManyToOne
-    val project: Project? = null
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "project_id", nullable = false)
+    val project: Project
 
 
 ) {

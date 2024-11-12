@@ -23,9 +23,7 @@ repositories {
 dependencies {
 	testImplementation("io.kotest:kotest-runner-junit5-jvm:5.9.1")
 	testImplementation("io.mockk:mockk:1.13.12")
-
 	runtimeOnly("io.kotest:kotest-assertions-core:5.9.1")
-
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
