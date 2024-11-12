@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.context.ApplicationListener
 import org.springframework.context.event.ContextRefreshedEvent
 import org.springframework.stereotype.Component
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @Component
 class Bootstrapper(
@@ -27,9 +28,10 @@ class Bootstrapper(
                 log.info("ADMIN and USER roles created!")
             }
         if (userRepository.findByRole("ADMIN").isEmpty()) {
+            val passwordEncoder = BCryptPasswordEncoder()
             val admin = User(
                 email="admin@authserver.com",
-                password="admin",
+                password=passwordEncoder.encode("admin"),
                 name="Auth Server Administrator"
             )
             admin.roles.add(adminRole)

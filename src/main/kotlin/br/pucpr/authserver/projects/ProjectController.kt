@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 import org.springframework.data.domain.Sort
+import org.springframework.security.access.prepost.PreAuthorize
 
 
 @RestController
@@ -54,6 +55,15 @@ class ProjectController(
         return service.findByStartDate(startDate).map { it.toResponse() }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{id}")
+    fun deleteProject(@PathVariable("id") id: Long): ResponseEntity<Void> {
+        return if (service.deleteById(id)) {
+            ResponseEntity.noContent().build()
+        } else {
+            ResponseEntity.notFound().build()
+        }
+    }
 
     private fun Project.toResponse() = ProjectResponse(id!!, name, description, start_date, end_date, status)
 }

@@ -24,6 +24,14 @@ class ProjectService (val repository: ProjectRepository, val taskRepository: Tas
         return repository.save(project)
         }
 
+    fun deleteById(id: Long): Boolean {
+        return if (repository.existsById(id)) {
+            repository.deleteById(id)
+            true
+        } else {
+            false
+        }
+    }
 
     fun getById(id: Long) = repository.findById(id)
 

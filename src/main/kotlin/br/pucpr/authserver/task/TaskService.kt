@@ -15,4 +15,13 @@ class TaskService(
 
     fun findbyName(name: String): Task? =
         repository.findByName(name)
+
+    fun deleteById(id: Long): Boolean {
+        return if (repository.existsById(id)) {
+            repository.deleteById(id)
+            true
+        } else {
+            false
+        }
+    }
 }
